@@ -1,3 +1,3 @@
-# voidbr-pkgfile-template
+# voidbr-nano-config
 
-Template for VoidBR pkgmake/pkgfile packages
+Custom nano configuration for Void Linux 

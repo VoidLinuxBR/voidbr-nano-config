@@ -1,0 +1,70 @@
+## sh.nanorc — Catafesta PRO Edition
+## Tema baseado no estilo C usado por vc: forte, limpo, legível e sem firula.
+
+syntax sh "(\.sh|(^|/|\.)(a|ba|c|da|k|mk|pdk|tc|z)sh(rc|_profile)?|(/etc/|(^|/)\.)profile)$"
+header "^#!.*/(((env|busybox)[[:blank:]]+)?(a|ba|c|da|k|mk|pdk|tc|z)?sh|openrc-run|runscript)\>"
+magic "(POSIX|Bourne-Again) shell script.*text"
+comment "#"
+
+linter dash -n
+
+########################################################################
+# FUNÇÕES — destacado estilo C (amarelo brilhante)
+########################################################################
+color brightyellow "^[[:alnum:]_-]+\(\)"
+
+########################################################################
+# PALAVRAS-CHAVE — azul clássico (como C)
+########################################################################
+color brightblue "\<(break|case|continue|do|done|elif|else|esac|exit|fi|for|function|if|in|read|select|shift|then|time|until|while)\>"
+
+########################################################################
+# DECLARAÇÕES ESPECIAIS — laranja (assignments, locals etc)
+########################################################################
+color brightmagenta "\<(declare|eval|exec|export|let|local|return)\>"
+
+########################################################################
+# SÍMBOLOS — verde (como no teu estilo C)
+########################################################################
+color green "[][{}():;|`$<>!=&]"
+color green "-(eq|ne|gt|lt|ge|le|ef|ot|nt)\>"
+
+########################################################################
+# FLAGS — opções curtas e longas
+########################################################################
+color cyan "[[:blank:]](-[[:alnum:]]|--[[:alnum:]-]+)"
+
+########################################################################
+# COMANDOS COMUNS — azul claro (padrão clássico)
+########################################################################
+color brightblue "\<(true|false|awk|cat|cd|ch(grp|mod|own)|cp|cut|echo|env|grep|head|install|ln|make|mkdir|mv|popd|printf|pushd|rm|rmdir|sed|set|sort|tail|tar|touch|umask|unset)\>"
+color brightblue "[.-]tar\>"
+
+########################################################################
+# VARIÁVEIS — vermelho (como em C)
+########################################################################
+# Simples
+color brightred "\$([-@*#?$![:digit:]]|[[:alpha:]_][[:alnum:]_]*)"
+# Complexas / arrays / braced
+color brightred "\$\{[#!]?([-@*#?$!]|[[:digit:]]+|[[:alpha:]_][[:alnum:]_]*)(\[([[:blank:]]*[[:alnum:]_]+[[:blank:]]*|@)\])?(([#%/]|:?[-=?+])[^}]*\}|\[|\})"
+
+########################################################################
+# STRINGS — amarelo brilhante (C-style)
+########################################################################
+color brightyellow ""([^"\\]|\\.)*""
+color brightyellow "'([^'\\]|\\.)*'"
+
+########################################################################
+# NÚMEROS — vermelho (igual tu pediu)
+########################################################################
+color brightred "\<[0-9]+\>"
+
+########################################################################
+# COMENTÁRIOS — cinza discreto
+########################################################################
+color gray "(^|[[:blank:]])#.*"
+
+########################################################################
+# WHITESPACE SOBRANDO — verde suave
+########################################################################
+color ,green "[[:space:]]+$"
