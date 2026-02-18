@@ -10,8 +10,11 @@ tabgives "  "
 comment "#"
 
 # Keys:
-color lightgreen "(\w|::|[/.-])+:( |$)"
-color lightgreen "\[(\w|::|[/., -])+\]:( |$)"
+#color lightgreen "(\w|::|[/.-])+:( |$)"
+#color lightgreen "\[(\w|::|[/., -])+\]:( |$)"
+color orange "(\w|::|[/.-])+:( |$)"
+color orange "\[(\w|::|[/., -])+\]:( |$)"
+
 
 # Values (booleans, numbers, octal/hex):
 color lightmagenta "[:,] +(Y(es)?|No?|y(es)?|no?|[Tt]rue|[Ff]alse|[Oo](n|ff))( *[]}]|, | +#|$)"
@@ -21,6 +24,7 @@ color normal "[:,]( |$)"
 # Values (dates, strings):
 color lightmagenta " [12][0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])"
 color lightmagenta "("([^"]|\\")+"|'[^']+')"
+color green "("([^"]|\\")+"|'[^']+')"
 
 # Anchors and aliases:
 color pink " [&*](\w|-)+( |$)"
