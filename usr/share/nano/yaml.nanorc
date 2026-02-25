@@ -33,7 +33,7 @@ color pink " [&*](\w|-)+( |$)"
 color bold,lagoon "^(%YAML +[1-9]\.[0-9]$|%TAG |(---|\.\.\.)( |$))"
 color bold,lagoon " [|>]([1-9]?[+-]|[+-][1-9]?)?$"
 color bold,yellow "^ *(\?|([?:] +)?-) "
-color yellow "[]{}[]"
+color red "[]{}[]>>"
 color normal "^ *: "
 
 # Tags:
@@ -49,3 +49,5 @@ color ,red "[[:cntrl:]]| +$"
 
 # Comments:
 color italic,cyan "(^| )#.*"
+color mint "true|false|pushd|popd|do|while|done|sudo|chown|if|else|fi|id|useradd|getent|local"
+color yellow "msg|replicate"
