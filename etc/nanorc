@@ -368,3 +368,10 @@ bind ^D "^[Oc^[[1;6D^T|sed 's/^[ \t]*//'" main
 #Se essa representação não funcionar, você pode tentar descobrir a sequência correta de escape para o "Delete" executando o seguinte comando:
 #cat -v
 # Define uma macro para inserir a estrutura de função shell
+
+bind ^D "{copy}{down}{home}{paste}" main
+bind M-Up "{copy}{up}{home}{paste}" main
+bind M-Down "{copy}{down}{home}{paste}" main
+#bind ^F "{execute}|shfmt{enter}" main
+bind ^F "{execute}|shfmt -ln bash -i 2{enter}" main
+
